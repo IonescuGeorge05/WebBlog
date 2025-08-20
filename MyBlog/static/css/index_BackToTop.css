@@ -1,0 +1,44 @@
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #008799;  /* albastru turcoaz blog */
+    color: white;
+    cursor: pointer;
+    padding: 12px 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #005f66; /* culoare hover mai închisă */
+    transform: scale(1.1);
+}
+
+/* Stil container pentru căutare */
+#searchContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input text pentru căutare */
+#searchInput {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border: 2px solid #008799;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 250px;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #005f66;
+    outline: none;
+}

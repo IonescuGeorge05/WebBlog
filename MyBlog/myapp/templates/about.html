@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}" />
+    <title>About George Ionescu</title>
+</head>
+
+<body>
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-main">
+
+        <section class="about-text">
+            <h2>About Me</h2>
+            <p>Hello! I am a Computer Science student at West University of Timisoara. I live in Timisoara, Romania, and I’m passionate about technology and programming. Welcome to my blog where I share insights and stories related to my life experiences, such as traveling, hobbies, studies and projects.</p>
+
+            <h2>Education</h2>
+            <p><strong>West University of Timisoara, ongoing</strong> - Bachelor's Degree in Computer Science</p>
+            <p><strong>Grigore Moisil Theoretical Highschool</strong> - Mathematics and Computer Science</p>
+            <h2>Experience</h2>
+            <p><strong>Student Developer</strong> - Various university and highschool projects and personal coding challenges</p>
+        </section>
+
+        <figure>
+            <img class="about-image" src="{% static 'images/image1.jpg' %}" alt="Intro image" width="200" />
+        </figure>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 George Ionescu - Blog</p>
+    </footer>
+</body>
+
+</html>

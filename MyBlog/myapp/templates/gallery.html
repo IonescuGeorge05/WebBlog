@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}" />
+    <script src="{% static 'gallery.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="slider">
+            <div class="slides">
+                <img src="{% static 'images/uvt.png' %}" alt="uvt" />
+                <img src="{% static 'images/image2.jpg' %}" alt="image 2" />
+                <img src="{% static 'images/image3.jpg' %}" alt="image 3" />
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </main>
+</body>
+</html>

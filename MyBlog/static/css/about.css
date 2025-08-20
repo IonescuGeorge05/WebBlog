@@ -1,0 +1,130 @@
+/* Reset some defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body and general layout */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #008799;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Navigation styles */
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    background-color: #008799;
+    border-radius: 8px;
+}
+
+.nav-list li a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a:focus {
+    background-color: #005f66;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+/* Main about content */
+.about-main {
+    max-width: 700px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+    padding: 25px 30px;
+    margin: 0 auto 40px auto;
+}
+
+.about-text h2 {
+    color: #008799;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Image styling */
+.about-main figure {
+    margin: 20px auto 0 auto;
+    max-width: 220px;
+    text-align: center;
+}
+
+.about-main figure img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-main figure img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+    .about-main {
+        padding: 20px 15px;
+        max-width: 90%;
+    }
+    header h1 {
+        font-size: 2.4rem;
+    }
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .nav-list li a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}

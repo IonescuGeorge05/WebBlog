@@ -1,0 +1,170 @@
+/* Reset some defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body and general layout */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #008799;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Navigation styles */
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    background-color: #008799;
+    border-radius: 8px;
+}
+
+.nav-list li a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a:focus {
+    background-color: #005f66;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+/* Post article styles */
+.post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-title {
+    color: #005f66;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.post-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+}
+
+.post-content {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    text-decoration: none;
+    background-color: #008799;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #005f66;
+}
+
+/* Reviews section */
+.reviews-section {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+}
+
+.reviews-section h2 {
+    color: #008799;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.reviews-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.review-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    font-size: 1rem;
+}
+
+.review-link {
+    color: #008799;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.review-link:hover {
+    text-decoration: underline;
+}
+
+.submit-review-btn {
+    display: inline-block;
+    background-color: #008799;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-review-btn:hover {
+    background-color: #005f66;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #666;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chatbot</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/chatbot.css' %}" />
+<script src="{% static 'chatbot.js' %}" defer></script>
+</head>
+<body>
+<header>
+        <h1>Gallery</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="chat-container" id="chat-container">
+</div>
+
+<form id="chat-form">
+    <input type="text" id="user-input" placeholder="Answer Here..." required />
+    <button type="submit">Trimite</button>
+</form>
+
+<script src="chatbot.js"></script>
+</body>
+</html>

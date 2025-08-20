@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index_BackToTop.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index_SearchPosts.css' %}" />
+    <script src="{% static 'index_BackToTop.js' %}" defer></script>
+    <script src="{% static 'index_SearchPosts.js' %}" defer></script>
+    <title>George Ionescu - Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to George Ionescu - Blog</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="searchContainer">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton" onclick="searchPosts()">Search</button>
+        </div>
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">Back to Top </button>
+        {% block content %}
+        {% for post in posts %}
+        <article class="post">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <p class="post-date">Posted on {{ post.post_date }}</p>
+            {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image" width="300px">
+            {% endif %}
+            <p class="post-content">{{ post.paragraph }}</p>
+            <a href="{% url 'post_detail' post.id %}" class="read-more">Read More</a>
+        </article>
+        {% endfor %}
+        {% endblock %}
+
+        <section class="reviews-section">
+            <h2>Reviews</h2>
+            <ul class="reviews-list">
+                {% for review in reviews %}
+                <li class="review-item">
+                    <p><strong>{{ review.email }}</strong> ({{ review.date }})</p>
+                    <p>Rating: {{ review.rating }}</p>
+                    <p>{{ review.comment }}</p>
+                    <a href="{% url 'update_review' review.id %}" class="review-link">Update</a> |
+                    <a href="{% url 'delete_review' review.id %}" class="review-link">Delete</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'submit_review' %}" class="submit-review-btn">Leave a Review</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 George Ionescu - Blog</p>
+    </footer>
+</body>
+
+</html>

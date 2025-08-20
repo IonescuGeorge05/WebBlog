@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #008799;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    background-color: #008799;
+    border-radius: 8px;
+}
+
+.nav-list li a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a:focus {
+    background-color: #005f66;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.slider {
+    max-width: 800px;
+    width: 100%;
+    height: 450px; /* înălțime fixă */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.slides {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slides img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: none; /* ascunse implicit */
+}
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #008799;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: #005f66;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }

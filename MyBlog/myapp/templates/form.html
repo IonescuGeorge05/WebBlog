@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+    <script src="{% static 'js/form.js' %}" defer></script>
+</head>
+<body>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <header>
+        <h1>Form</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="{% url 'contact' %}" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <p>
+                <label>Salutation
+                    <select name="salutation">
+                        <option value="">--None--</option>
+                        <option>Mr.</option>
+                        <option>Ms.</option>
+                        <option>Mrs.</option>
+                        <option>Dr.</option>
+                        <option>Prof.</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>First name: <input name="firstName" type="text" required /></label>
+            </p>
+            <p>
+                <label>Last name: <input name="lastName" type="text" required /></label>
+            </p>
+            <p>Gender:
+                <span class="gender-group">
+                    <label><input type="radio" name="gender" value="male" required />Male</label>
+                    <label><input type="radio" name="gender" value="female" required />Female</label>
+                </span>
+            </p>
+            <p>
+                <label>Email:<input type="email" name="email" required /></label>
+            </p>
+            <p>
+                <label>Date of Birth:<input type="date" name="birthDate" required></label>
+            </p>
+            <p>
+                <label>Address: <textarea name="address" cols="30" rows="3"></textarea></label>
+            </p>
+            <p>
+                <label>Phone Number:<input type="tel" name="phone" pattern="[0-9+ ]{7,15}" placeholder="+40 712 345 678" required /></label>
+            </p>
+            <p>
+                <label>Upload File:<input type="file" name="attachment" accept=".pdf,.doc,.jpg,.png" /></label>
+            </p>
+
+            <p><button type="submit">Submit</button></p>
+        </form>
+    </main>
+</body>
+</html>
